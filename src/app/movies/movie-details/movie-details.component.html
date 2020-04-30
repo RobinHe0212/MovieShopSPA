@@ -1,0 +1,30 @@
+<p>movie-details works!</p>
+<div class="col-md-3 offset-2">
+    <div>
+      <img src="{{ movie?.posterUrl }}"
+           alt="{{ movie?.title }}"
+           class="card-img-top" />
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-12">
+      <h1 class="text-white"> {{movie?.title}}
+      </h1>
+      <small class="text-muted"> {{movie?.tagLine}} </small>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4 text-secondary font-weight-bold mt-2">
+      {{movie?.runTime}} m | {{movie?.releaseDate | date:'yyyy'}}
+    </div>
+    <div class="col-8">
+      <ng-container *ngFor="let g of movie.genre">
+        <a href="#"
+           *ngIf="g"
+           [routerLink]="['/movies/genres/', g?.id ]"
+           class="badge badge-pill badge-dark ml-1"> {{g?.name}}</a>
+      </ng-container>
+    </div>
+  </div>
