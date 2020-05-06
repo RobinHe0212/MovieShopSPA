@@ -12,6 +12,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MovieCardListComponent } from './movies/movie-card-list/movie-card-list.component';
 import { MovieCardComponent } from './shared/components/movie-card/movie-card.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
+import { AuthModule } from './auth/auth.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,8 +31,11 @@ import { MovieDetailsComponent } from './movies/movie-details/movie-details.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    AuthModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
