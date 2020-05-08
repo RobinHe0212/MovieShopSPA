@@ -16,12 +16,16 @@
             </div>
           </div>
         </li> 
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isLoggedIn==false">
           <a  class="btn btn-outline-primary" [routerLink]="['/register']">Register</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isLoggedIn==false">
             <a [routerLink]="['/login']" class="btn btn-outline-primary">Login</a>
         </li>
+        <li class="nav-item">
+          <h1>{{userName}}</h1>
+          
+      </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

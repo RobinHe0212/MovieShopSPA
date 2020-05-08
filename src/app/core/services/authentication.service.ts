@@ -24,6 +24,14 @@ export class AuthenticationService {
     return this.user;
   }
   
+  isLoggedIn():boolean{
+    const token = this.jwtStorageService.getToken();
+    if(!token||new JwtHelperService().isTokenExpired(token)){
+      return false;
+    }
+    return true;
+  }
+
   getUserFullName():string {
     if(this.decodeToken()!=null){
       const decodedToken = this.decodeToken();
